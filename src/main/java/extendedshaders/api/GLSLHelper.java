@@ -36,22 +36,22 @@ public class GLSLHelper
 	/** creates a new shader program **/
 	public static int createProgram()
 	{
-		return OpenGlHelper.func_153183_d();
+		return OpenGlHelper.glCreateProgram();
 	}
 	/** gets the location of a uniform in the shader program **/
 	public static int getUniformLocation(int program, CharSequence name)
 	{
-		return OpenGlHelper.func_153194_a(program, name);
+		return OpenGlHelper.glGetUniformLocation(program, name);
 	}
 	/** creates a vertex shader **/
 	public static int createVertShader()
 	{
-		return OpenGlHelper.func_153195_b(GL20.GL_VERTEX_SHADER);
+		return OpenGlHelper.glCreateShader(GL20.GL_VERTEX_SHADER);
 	}
 	/** creates a fragment shader **/
 	public static int createFragShader()
 	{
-		return OpenGlHelper.func_153195_b(GL20.GL_FRAGMENT_SHADER);
+		return OpenGlHelper.glCreateShader(GL20.GL_FRAGMENT_SHADER);
 	}
 	/** load the string into the shader **/
 	public static void shaderSource(int shader, CharSequence string)
@@ -62,17 +62,17 @@ public class GLSLHelper
 	/** compiles the shader **/
 	public static void compileShader(int shader)
 	{
-		OpenGlHelper.func_153170_c(shader);
+		OpenGlHelper.glCompileShader(shader);
 	}
 	/** returns TRUE if the shader DID compile successfully **/
 	public static boolean didShaderCompile(int shader)
 	{
-		return OpenGlHelper.func_153157_c(shader, GL20.GL_COMPILE_STATUS) == GL11.GL_TRUE;
+		return OpenGlHelper.glGetShaderi(shader, GL20.GL_COMPILE_STATUS) == GL11.GL_TRUE;
 	}
 	/** deletes a shader **/
 	public static void deleteShader(int shader)
 	{
-		OpenGlHelper.func_153180_a(shader);
+		OpenGlHelper.glDeleteShader(shader);
 	}
 	/** gets the log for the shader **/
     public static String getShaderLog(int shader)
@@ -82,17 +82,17 @@ public class GLSLHelper
 	/** attaches the shader to the program **/
     public static void linkShader(int program, int shader)
     {
-    	OpenGlHelper.func_153178_b(program, shader);
+    	OpenGlHelper.glAttachShader(program, shader);
     }
     /** finalizes the program after linking shaders **/
     public static void linkProgram(int program)
     {
-    	OpenGlHelper.func_153179_f(program);
+    	OpenGlHelper.glLinkProgram(program);
     }
     /** returns TRUE if the shaders linked to the program successfully **/
 	public static boolean didProgramLink(int program)
 	{
-		return OpenGlHelper.func_153175_a(program, GL20.GL_LINK_STATUS) == GL11.GL_TRUE;
+		return OpenGlHelper.glGetProgrami(program, GL20.GL_LINK_STATUS) == GL11.GL_TRUE;
 	}
 	/** runs a validation check on the program to ensure nothing goes wrong **/
 	public static void validateProgram(int program)
@@ -113,17 +113,17 @@ public class GLSLHelper
     /** sets the active shader program **/
 	public static void runProgram(int program)
 	{
-		OpenGlHelper.func_153161_d(program);
+		OpenGlHelper.glUseProgram(program);
 	}
 	/** deletes a program **/
 	public static void deleteProgram(int program)
 	{
-		OpenGlHelper.func_153187_e(program);
+		OpenGlHelper.glDeleteProgram(program);
 	}
 	/** sets a uniform integer type (bool, int, sampler2D, ect.) **/
 	public static void uniform1i(int location, int val)
 	{
-		OpenGlHelper.func_153163_f(location, val);
+		OpenGlHelper.glUniform1i(location, val);
 	}
 	/** sets a uniform float type **/
 	public static void uniform1f(int location, float val)
@@ -170,57 +170,57 @@ public class GLSLHelper
 	/** sets a uniform integer (bool, int, sampler2D, ect.) type array **/
 	public static void uniform1(int location, IntBuffer val)
 	{
-		OpenGlHelper.func_153181_a(location, val);
+		OpenGlHelper.glUniform1(location, val);
 	}
 	/** sets a uniform float type array **/
 	public static void uniform1(int location, FloatBuffer val)
 	{
-		OpenGlHelper.func_153168_a(location, val);
+		OpenGlHelper.glUniform1(location, val);
 	}
 	/** sets a uniform 2-integer type array **/
 	public static void uniform2(int location, IntBuffer val)
 	{
-		OpenGlHelper.func_153182_b(location, val);
+		OpenGlHelper.glUniform2(location, val);
 	}
 	/** sets a uniform 2-float (vec2) type array **/
 	public static void uniform2(int location, FloatBuffer val)
 	{
-		OpenGlHelper.func_153177_b(location, val);
+		OpenGlHelper.glUniform2(location, val);
 	}
 	/** sets a uniform 3-integer type array **/
 	public static void uniform3(int location, IntBuffer val)
 	{
-		OpenGlHelper.func_153192_c(location, val);
+		OpenGlHelper.glUniform3(location, val);
 	}
 	/** sets a uniform 3-float (vec3) type array **/
 	public static void uniform3(int location, FloatBuffer val)
 	{
-		OpenGlHelper.func_153191_c(location, val);
+		OpenGlHelper.glUniform3(location, val);
 	}
 	/** sets a uniform 4-integer type array **/
 	public static void uniform4(int location, IntBuffer val)
 	{
-		OpenGlHelper.func_153162_d(location, val);
+		OpenGlHelper.glUniform4(location, val);
 	}
 	/** sets a uniform 4-float (vec4) type array **/
 	public static void uniform4(int location, FloatBuffer val)
 	{
-		OpenGlHelper.func_153159_d(location, val);
+		OpenGlHelper.glUniform4(location, val);
 	}
 	/** sets a uniform mat2 **/
     public static void uniformMat2(int location, boolean transpose, FloatBuffer val)
     {
-    	OpenGlHelper.func_153173_a(location, transpose, val);
+    	OpenGlHelper.glUniformMatrix2(location, transpose, val);
     }
 	/** sets a uniform mat3 **/
     public static void uniformMat3(int location, boolean transpose, FloatBuffer val)
     {
-    	OpenGlHelper.func_153189_b(location, transpose, val);
+    	OpenGlHelper.glUniformMatrix3(location, transpose, val);
     }
 	/** sets a uniform mat4 **/
     public static void uniformMat4(int location, boolean transpose, FloatBuffer val)
     {
-    	OpenGlHelper.func_153160_c(location, transpose, val);
+    	OpenGlHelper.glUniformMatrix4(location, transpose, val);
     }
     /** reads a text file as a single string of text **/
     public static String readFileAsString(ResourceLocation loc, IResourceManager manager) throws Exception

@@ -1,7 +1,9 @@
-API for the Extended Shaders mod, for Minecraft 1.7.10
+API for the Extended Shaders mod, for Minecraft 1.10.2
+
 The purpose of this API, and it's containing coremod, Extended Shaders, is to allow mods to use shaders and post-processors inside Minecraft without needing to learn how to make a coremod, and without sacrificing compatibility with other mods using this shader system.
 It is designed to allow multiple mods to "attach" shader uniforms, variables, constants, and code without conflicting with each other, in a way not provided by GLSL itself.
 It is NOT intended to be used by someone without a good understanding of GLSL.
+Extended Shaders for MC 1.10.2 is NOT Optifine compatible due to the merging of Optifine and Shaders Mod that occurred in MC 1.8
 
 HOW TO USE:	
 

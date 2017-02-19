@@ -1,5 +1,6 @@
 build/
 eclipse/
+run/
 CREDITS-fml.txt
 LICENSE-fml.txt
 MinecraftForge-Credits.txt
@@ -25,7 +26,11 @@ classes/
 src/main/java/extendedshaders/core/
 mcsrc/
 build.gradle
-forge-1.7.10-10.13.4.1614-1.7.10-changelog.txt
 gradle/
 gradlew
 gradlew.bat
+*.launch
+forge-1.10.2-12.18.3.2221-changelog.txt
+LICENSE-new.txt
+Paulscode SoundSystem CodecIBXM License.txt
+Paulscode IBXM Library License.txt
